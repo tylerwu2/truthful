@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Truthful</title>
+  <style>
+    body {
+      width: 360px;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f8f9fa;
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .score-container {
+      position: relative;
+      margin: 20px 0;
+    }
+    .score {
+      font-size: 48px;
+      font-weight: bold;
+      text-align: center;
+      color: #333;
+    }
+    .gauge {
+      width: 100%;
+      height: 20px;
+      background: #e9ecef;
+      border-radius: 10px;
+      margin: 10px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .gauge-fill {
+      height: 100%;
+      background: linear-gradient(to right, #28a745 0%, #ffc107 50%, #dc3545 100%);
+      border-radius: 10px;
+      transition: width 0.3s ease;
+      width: 0%;
+    }
+    .verdict {
+      text-align: center;
+      font-weight: bold;
+      margin: 10px 0;
+      padding: 8px;
+      border-radius: 4px;
+    }
+    .verdict.low { background: #d4edda; color: #155724; }
+    .verdict.medium { background: #fff3cd; color: #856404; }
+    .verdict.high { background: #f8d7da; color: #721c24; }
+    .claims {
+      max-height: 200px;
+      overflow-y: auto;
+      margin: 15px 0;
+    }
+    .claim-item {
+      padding: 8px;
+      margin: 5px 0;
+      border-radius: 4px;
+      border-left: 4px solid;
+      font-size: 14px;
+    }
+    .claim-item.high { border-left-color: #dc3545; background: #f8d7da20; }
+    .claim-item.medium { border-left-color: #ffc107; background: #fff3cd20; }
+    .claim-item.low { border-left-color: #28a745; background: #d4edda20; }
+    .claim-category {
+      font-weight: bold;
+      font-size: 12px;
+      text-transform: uppercase;
+      opacity: 0.8;
+    }
+    .claim-text {
+      margin: 4px 0;
+      font-style: italic;
+    }
+    .claim-risk {
+      font-size: 12px;
+      color: #666;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      margin: 10px 0;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+    button:disabled {
+      background: #6c757d;
+      cursor: not-allowed;
+    }
+    .status {
+      text-align: center;
+      font-size: 14px;
+      color: #666;
+      margin: 10px 0;
+    }
+    .settings-link {
+      text-align: center;
+      margin-top: 15px;
+    }
+    .settings-link a {
+      color: #007bff;
+      text-decoration: none;
+      font-size: 14px;
+    }
+    .settings-link a:hover {
+      text-decoration: underline;
+    }
+    .empty-state {
+      text-align: center;
+      padding: 20px;
+      color: #666;
+    }
+    .empty-state-icon {
+      font-size: 24px;
+      margin-bottom: 8px;
+    }
+    .empty-state-text {
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>Truthful</h1>
+  </div>
+
+  <div class="score-container">
+    <div class="score" id="score">--</div>
+    <div class="gauge">
+      <div class="gauge-fill" id="gaugeFill"></div>
+    </div>
+  </div>
+
+  <div class="verdict" id="verdict">Loading...</div>
+
+  <div class="claims" id="claimsList"></div>
+
+  <button id="scanBtn">Scan This Page</button>
+
+  <div class="status" id="status"></div>
+
+  <div class="settings-link">
+    <a href="#" id="settingsLink">Settings</a>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

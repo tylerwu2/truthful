@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Truthful",
+  "version": "1.0",
+  "description": "Detects and highlights potential misinformation on web pages",
+  "permissions": ["activeTab", "storage", "scripting"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "Truthful"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "options_page": "options/options.html"
+}

@@ -1,0 +1,101 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environments
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Testing & Coverage
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.hypothesis/
+
+# IDE & Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+*.sublime-project
+*.sublime-workspace
+
+# OS specific
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+
+# Node (if added in future)
+node_modules/
+package-lock.json
+npm-debug.log
+
+# Chrome Extension
+*.crx
+*.pem
+dist/
+*.zip
+
+# Environment variables & secrets
+.env
+.env.local
+.env.*.local
+
+# Logs
+*.log
+logs/
+*.log*
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
+
+# Generated/Training artifacts (optional - uncomment if you want to commit weights.json)
+# weights.json
+# model_checkpoints/
+
+# IDE cache
+.pylintrc
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# MacOS
+.AppleDouble
+.LSOverride
+
+# Windows
+$RECYCLE.BIN/
